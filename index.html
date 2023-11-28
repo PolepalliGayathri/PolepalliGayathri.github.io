@@ -6,7 +6,36 @@
 <body>
 <h1>Hello Everyone!</h1>
 <p>“Nothing is impossible. The word itself says I'm Possible.” </p>
-<script src="https://ak.sail-horizon.com/spm/spm.v1.min.js"></script>
-<script>Sailthru.init({ customerId: '140545c383793e6cfc3cf761953760cc' });</script>
+  <script src="https://ak.sail-horizon.com/spm/spm.v1.min.js"></script>
+<script>
+   Sailthru.init({
+       customerId: <5682cac7bf2d3e453217c622>,
+       isCustom: true,
+       autoTrackPageview: false
+   });
+
+   Sailthru.track('pageview', {
+       url: <url of page to track>
+   });
+
+   Sailthru.personalize({
+       sections: [
+           {
+               id: <section id for section>,
+               // no selector provided to manually track impressions / clicks
+           }
+       ]
+   });
+
+   Sailthru.track('impression', {
+       sectionId: <section id for section>,
+       urls: <array of urls, not required>
+   });
+
+   Sailthru.track('click', {
+       sectionId: <section id for section>,
+       url: <url that was clicked>
+   });
+</script>
 </body>
 </html>
