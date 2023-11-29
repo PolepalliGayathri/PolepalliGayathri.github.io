@@ -10,32 +10,32 @@
 <script>
    Sailthru.init({
        customerId: "5682cac7bf2d3e453217c622",
-       isCustom: true,
-       autoTrackPageview: false
+       // isCustom: true,
+       // autoTrackPageview: false
    });
 
-   Sailthru.track('pageview', {
-       url: <url of page to track>
-   });
+   // Sailthru.track('pageview', {
+   //     url: <url of page to track>
+   // });
 
-   Sailthru.personalize({
-       sections: [
-           {
-               id: <section id for section>,
-               // no selector provided to manually track impressions / clicks
-           }
-       ]
-   });
+   // Sailthru.personalize({
+   //     sections: [
+   //         {
+   //             id: <section id for section>,
+   //             // no selector provided to manually track impressions / clicks
+   //         }
+   //     ]
+   // });
 
-   Sailthru.track('impression', {
-       sectionId: <section id for section>,
-       urls: <array of urls, not required>
-   });
+   // Sailthru.track('impression', {
+   //     sectionId: <section id for section>,
+   //     urls: <array of urls, not required>
+   // });
 
-   Sailthru.track('click', {
-       sectionId: <section id for section>,
-       url: <url that was clicked>
-   });
+   // Sailthru.track('click', {
+   //     sectionId: <section id for section>,
+   //     url: <url that was clicked>
+   // });
 </script>
 </body>
 </html>
