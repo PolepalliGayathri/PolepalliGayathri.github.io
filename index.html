@@ -7,18 +7,6 @@
 <h1>Hello Everyone!</h1>
 <p>“Nothing is impossible. The word itself says I'm Possible.” </p>
   <script src="https://ak.sail-horizon.com/spm/spm.v1.min.js"></script>
-  <script>
-Sailthru.init({
-  customerId: '140545c383793e6cfc3cf761953760cc',
-  onSignupSuccess: function(email) {
-    // Existing code for handling successful signup...
-
-    // Increase the display time (adjust 5000 to your desired duration in milliseconds)
-    setTimeout(() => {
-      // Code to close the overlay (replace with the existing closing logic)
-    }, 10000);
-  }
-});
-  </script>
+ <script>Sailthru.init({ customerId: '140545c383793e6cfc3cf761953760cc' });</script>
 </body>
 </html>
