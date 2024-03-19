@@ -8,14 +8,18 @@
 <p>“Nothing is impossible. The word itself says I'm Possible.” </p>
   <script src="https://ak.sail-horizon.com/spm/spm.v1.min.js"></script>
   <script className="sailthru-overlay-post-click">
-  Sailthru.init({
-    customerId: '140545c383793e6cfc3cf761953760cc',
-    onSignupSuccess: function(email) {
+  document.addEventListener("DOMContentLoaded", function() {
+    // Your code here
+    var customerId = '140545c383793e6cfc3cf761953760cc';
+    
+    // Function to execute after signup success
+    function onSignupSuccess(email) {
       setTimeout(function() {
         console.log('10 seconds have passed since signup.');
-      }, 100000);
+      }, 10000); // 10000 milliseconds = 10 seconds
     }
   });
 </script>
+
 </body>
 </html>
