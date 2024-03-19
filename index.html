@@ -7,31 +7,15 @@
 <h1>Hello Everyone!</h1>
 <p>“Nothing is impossible. The word itself says I'm Possible.” </p>
   <script src="https://ak.sail-horizon.com/spm/spm.v1.min.js"></script>
- <script>Sailthru.init({ customerId: 140545c383793e6cfc3cf761953760cc });</script>
- <script>
- // Get the post-click element
-var postClickElement = document.querySelector('.sailthru-overlay-post-click');
-
-// If the element is found, add an event listener for the overlay's 'shown' event
-if (postClickElement) {
-  postClickElement.addEventListener('shown', function() {
-
-    // Function to remove the overlay after a desired time (in milliseconds)
-    function removeOverlay() {
-      postClickElement.style.display = 'none';
+  <script className="sailthru-overlay-post-click">
+  Sailthru.init({
+    customerId: '140545c383793e6cfc3cf761953760cc',
+    onSignupSuccess: function(email) {
+      setTimeout(function() {
+        console.log('10 seconds have passed since signup.');
+      }, 100000);
     }
-
-    // Set your desired display time in milliseconds (e.g., 10 seconds = 10000 milliseconds)
-    var displayTime = 10000;
-
-    // Start a timeout to remove the overlay after the specified time
-    setTimeout(removeOverlay, displayTime);
   });
-} else {
-  console.error("Sailthru post-click element not found.");
-}
 </script>
-
-
 </body>
 </html>
