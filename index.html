@@ -7,19 +7,36 @@
 <h1>Hello Everyone!</h1>
 <p>“Nothing is impossible. The word itself says I'm Possible.” </p>
   <script src="https://ak.sail-horizon.com/spm/spm.v1.min.js"></script>
-  <script className="sailthru-overlay-post-click">
+ <script className="sailthru-overlay-post-click">
   document.addEventListener("DOMContentLoaded", function() {
-    // Your code here
     var customerId = '140545c383793e6cfc3cf761953760cc';
-    
+
     // Function to execute after signup success
     function onSignupSuccess(email) {
       setTimeout(function() {
-        console.log('10 seconds have passed since signup.');
+        console.log('10 seconds have passed since signup for email: ' + email);
       }, 10000); // 10000 milliseconds = 10 seconds
+    }
+
+    // **Assuming a signup form with a submit button**
+    var signupForm = document.getElementById('signup-form');  // Replace 'signup-form' with your actual form ID
+    if (signupForm) {
+      signupForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission behavior
+
+        // Simulate successful signup (replace with your actual signup logic)
+        var signupEmail = document.getElementById('signup-email').value;  // Replace 'signup-email' with your email input ID
+        console.log('Signup submitted for email: ' + signupEmail);
+
+        // Call success function with signup email
+        onSignupSuccess(signupEmail);
+      });
+    } else {
+      console.error('Signup form not found!');
     }
   });
 </script>
+
 
 </body>
 </html>
