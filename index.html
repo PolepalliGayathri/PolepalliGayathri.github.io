@@ -9,20 +9,24 @@
  <script src="https://ak.sail-horizon.com/spm/spm.v1.min.js"></script>
  <script>Sailthru.init({ customerId: '140545c383793e6cfc3cf761953760cc' });</script>
  <script >
-let timeoutId;
-
-function hideOverlayWithDelay(milliseconds) {
-    clearTimeout(timeoutId); // Clear any existing timeout
-    timeoutId = setTimeout(() => {
+const OVERLAY_TIMEOUT = 10000;
+     function handlePostClick(postClick, keys, vars) {
+    if (postClick && postClick.redirect && postClick.redirect.active && postClick.redirect.url) {
+        const url = generateRedirectUrl(postClick.redirect.url, keys, vars);
+        if (!postClick.redirect.new_tab) {
+            window.location.assign(url);
+        }
         hideOverlay();
-    }, milliseconds);
-}
+        return `Redirecting to ${url}`;
+    } else if (postClick && postClick.message && postClick.message.active && postClick.message.text) {
+        showPostClickMessage();
+        hideOverlayWithDelay(OVERLAY_TIMEOUT);
+        return `Display Message: ${postClick.message.text}`;
+    }
 
-// To extend the time:
-function extendTimeout(newMilliseconds) {
-    hideOverlayWithDelay(newMilliseconds);
+    hideOverlay();
+    return 'No Post-click Action';
 }
-extendTimeout(10000);
 </script>
 </body>
 </html>
