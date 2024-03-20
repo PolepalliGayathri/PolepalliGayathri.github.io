@@ -9,8 +9,9 @@
  <script src="https://ak.sail-horizon.com/spm/spm.v1.min.js"></script>
  <script>Sailthru.init({ customerId: '140545c383793e6cfc3cf761953760cc' });</script>
  <script >
-const OVERLAY_TIMEOUT = 10000;
-     function handlePostClick(postClick, keys, vars) {
+const OVERLAY_TIMEOUT = 15000;
+
+function handlePostClick(postClick, keys, vars) {
     if (postClick && postClick.redirect && postClick.redirect.active && postClick.redirect.url) {
         const url = generateRedirectUrl(postClick.redirect.url, keys, vars);
         if (!postClick.redirect.new_tab) {
@@ -20,13 +21,14 @@ const OVERLAY_TIMEOUT = 10000;
         return `Redirecting to ${url}`;
     } else if (postClick && postClick.message && postClick.message.active && postClick.message.text) {
         showPostClickMessage();
-        hideOverlayWithDelay(OVERLAY_TIMEOUT);
+        hideOverlayWithDelay(OVERLAY_TIMEOUT); // Use the updated delay time
         return `Display Message: ${postClick.message.text}`;
     }
 
     hideOverlay();
     return 'No Post-click Action';
 }
+
 </script>
 </body>
 </html>
