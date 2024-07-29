@@ -18,11 +18,15 @@
  <script src="https://ak.sail-horizon.com/spm/spm.v1.min.js"></script>
   <script>Sailthru.init({ customerId: '140545c383793e6cfc3cf761953760cc' });</script>
   <script>
-Sailthru.track('impression', {
-
-"urls": 'https://my.sailthru.com',
-"onSuccess": function(response) {console.log('Manual track impression - SUCCESS', response);},
-"onError": function(response) {console.log('Manual track impression - ERROR', response);}
+Sailthru.track('click', {
+   "sectionId" :  '1ef268b8-cfd1-11ee-95c5-66a6d5358e4e',
+   "url" : 'https://my.sailthru.com',
+   "onSuccess" : function(response) {
+       console.log('Manual track click - SUCCESS', response);
+   },
+   "onError" : function(response) {
+       console.log('Manual track click - ERROR', response);
+   }
 });
 </script>
 </body>
