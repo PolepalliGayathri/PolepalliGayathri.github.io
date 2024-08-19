@@ -25,14 +25,19 @@
    Sailthru.track('pageview', {
        url: "https://polepalligayathri.github.io/"   });
 
-  Sailthru.personalize({
-       sections: [
-           {
-               id: '1ef268b8-cfd1-11ee-95c5-66a6d5358e4e',
-           }
-       ]
-   });
-   
+ try {
+    Sailthru.personalize({
+        sections: [
+            {
+                id: '1ef268b8-cfd1-11ee-95c5-66a6d5358e4e'
+            }
+        ]
+    });
+    console.log('Personalization request sent successfully.');
+} catch (error) {
+    console.error('Error in personalization request:', error);
+}
+
 
    Sailthru.track('impression', {
        sectionId: '1ef268b8-cfd1-11ee-95c5-66a6d5358e4e',
