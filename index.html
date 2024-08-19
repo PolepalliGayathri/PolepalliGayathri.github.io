@@ -41,20 +41,6 @@
        sectionId: '1ef268b8-cfd1-11ee-95c5-66a6d5358e4e',
        url: 'https://my.sailthru.com'   });
 </script>
-  <h1>We recommend for you:</h1>
-    
-    <!-- Templating code -->
-    {content = personalize({
-    "algorithm" : "popular",
-    "size" : 100
-    })}
-    {nonPurchased = purchased_items(content,false,90)}
-    
-    <!-- Loop through and display recommended items -->
-    {foreach slice(nonPurchased,0,3) as c}
-        <div>
-            <h2>{c.title}</h2>
-        </div>
-    {/foreach}
+
 </body>
 </html>
