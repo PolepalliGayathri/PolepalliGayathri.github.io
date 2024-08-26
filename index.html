@@ -41,6 +41,67 @@
   <p>“Nothing is impossible. The word itself says I'm Possible.” </p>
    <a href="https://my.sailthru.com/">Sailthru</a>
 </div>
- 
+
+  <div class="recommended-items" id="recommended-items">
+    <!-- Recommended items will be inserted here by JavaScript -->
+</div>
+
+<script>
+    // Sample JSON data
+    const recommendations = [
+        {
+            url: 'https://example.com/item1',
+            title: 'Shirt 1',
+            image: 'https://example.com/images/shirt1.jpg'
+        },
+        {
+            url: 'https://example.com/item2',
+            title: 'Boot 1',
+            image: 'https://example.com/images/boot1.jpg'
+        },
+        {
+            url: 'https://example.com/item3',
+            title: 'Pullover 1',
+            image: 'https://example.com/images/pullover1.jpg'
+        },
+        {
+            url: 'https://example.com/item4',
+            title: 'Vase 1',
+            image: 'https://example.com/images/vase1.jpg'
+        },
+        {
+            url: 'https://example.com/item5',
+            title: 'Shirt 2',
+            image: 'https://example.com/images/shirt2.jpg'
+        },
+        {
+            url: 'https://example.com/item6',
+            title: 'Boot 2',
+            image: 'https://example.com/images/boot2.jpg'
+        }
+    ];
+
+    function displayRecommendations(items) {
+        const container = document.getElementById('recommended-items');
+        items.forEach(item => {
+            const itemElement = document.createElement('div');
+            itemElement.classList.add('recommended-item');
+            itemElement.innerHTML = `
+                <a href="${item.url}" title="${item.title}" class="product-image">
+                    <img src="${item.image}" alt="${item.title}">
+                </a>
+                <h3 class="product-name">
+                    <a href="${item.url}" title="${item.title}">${item.title}</a>
+                </h3>
+            `;
+            container.appendChild(itemElement);
+        });
+    }
+
+    // Display the recommendations on page load
+    displayRecommendations(recommendations);
+</script>
+
+  
 </body>
 </html>
