@@ -42,13 +42,5 @@
    <a href="https://my.sailthru.com/">Sailthru</a>
 </div>
  
-{if length(userContent) > 0}
-        <p>Based on your preferences, here are stories you'll enjoy:</p>
-        {foreach personalizedContent as c}
-            <p>From the {c.vars.sailthru_category} category: <a href="{c.url}">{c.title}</a></p>
-        {/foreach}
-    {else}
-        <p>Want personalized recommendations? Tell us what you like <a href="http://example.com/preferences">here</a> to start following a certain category!</p>
-    {/if}
 </body>
 </html>
