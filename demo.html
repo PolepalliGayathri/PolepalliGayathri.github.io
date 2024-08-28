@@ -211,26 +211,26 @@
       </div>
    </div>
 </div>
-	  <script>
-		  document.getElementById('r0c0m0i4').addEventListener('click',function(){
-		  var fname = document.getElementById('r0c0m0i1').value;
-			   var lname = document.getElementById('r0c0m0i2').value;
-			   var email = document.getElementById('r0c0m0i3').value;
-			   $.ajax({
-          url: 'https://api.sail-track.com/v1/track/user/signup', 
-          type: 'GET', // Type of request (GET, POST)
-          data: {
-            email:email
-        },
-          success: function(response) {
-              $('#result').html(response);
-          },
-          error: function(xhr, status, error) {
-              console.error("Error: " + error);
-          }
-        });
-		
-		  
-	  </script>
+	 <script>
+  document.getElementById('r0c0m0i4').addEventListener('click',function(){
+  var fname = document.getElementById('r0c0m0i1').value;
+     var lname = document.getElementById('r0c0m0i2').value;
+     var email = document.getElementById('r0c0m0i3').value;
+     $.ajax({
+      url: 'https://api.sail-track.com/v1/track/user/signup', 
+      type: 'GET', // Type of request (GET, POST)
+      data: {
+        email:email
+    },
+      success: function(response) {
+          $('#result').html(response);
+      },
+      error: function(xhr, status, error) {
+          console.error("Error: " + error);
+      }
+    });
+
+  });
+</script>
   </body>
 </html>
