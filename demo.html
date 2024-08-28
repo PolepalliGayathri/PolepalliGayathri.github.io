@@ -193,11 +193,11 @@
   </div>
   <div class="bee-popup-form-row">
     <div class="bee-popup-field bee-popup-field-r0c0m0i1"><label for="r0c0m0i1">Last Name</label>
-     <input id="r0c0m0i1" name="text" type="text" placeholder="Last Name" /></div>
+     <input id="r0c0m0i2" name="text" type="text" placeholder="Last Name" /></div>
  </div>
  <div class="bee-popup-form-row">
     <div class="bee-popup-field bee-popup-field-r0c0m0i1"><label for="r0c0m0i1">Email</label>
-     <input id="r0c0m0i1" name="email" type="text" placeholder="Email" /></div>
+     <input id="r0c0m0i3" name="email" type="text" placeholder="Email" /></div>
  </div>
   <div class="bee-popup-form-row">
      <div class="bee-popup-field bee-popup-field-r0c0m0i2">
@@ -213,7 +213,10 @@
 </div>
 	  <script>
 		  document.getElementById('r0c0m0i2').addEventListener('click',function(){
-			  alert("clickme");
+		  var fname = document.getElementById('r0c0m0i1').value;
+			   var lname = document.getElementById('r0c0m0i2').value;
+			   var email = document.getElementById('r0c0m0i3').value;
+			  console.log(email);
 		  });
 		  
 	  </script>
