@@ -222,6 +222,10 @@
       data: {
         email:email
     },
+    crossDomain: true,
+      xhrFields: {
+        withCredentials: true
+      },
       success: function(response) {
           $('#result').html(response);
       },
